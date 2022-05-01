@@ -10,8 +10,8 @@ const schemaRegister = yup.object().shape({
     .string()
     .required("Por favor, insira uma senha")
     .min(8, "A senha precisa ter 8 caracteres"),
-  telefone: yup.string().required("Por favor, insira um cep"),
-  cep: yup.string().required("Por favor, insira um telefone"),
+  telefone: yup.string().required("Por favor, insira um telefone"),
+  cep: yup.string().required("Por favor, insira um cep"),
 });
 
 export default schemaRegister;
