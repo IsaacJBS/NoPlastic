@@ -1,4 +1,4 @@
-create database NoPlastic;
+-- create database NoPlastic;
 
 drop table if exists usuarios;
 
