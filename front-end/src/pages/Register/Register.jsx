@@ -5,13 +5,16 @@ import CustomButton from "../../components/CustomButton/CustomButton";
 import help from "../../assets/help.svg";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import SchemaRegister from "../../validations/SchemaRegister";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const Register = () => {
+  const validationRegister = { resolver: yupResolver(SchemaRegister) };
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm(validationRegister);
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -30,11 +33,13 @@ const Register = () => {
           </div>
           <div className={styles.container__input}>
             <label htmlFor="name">Nome</label>
-            <input {...register("name")} id="name" type="text" />
+            <input {...register("nome")} id="name" type="text" />
+            <p className="errors">{errors.nome?.message}</p>
           </div>
           <div className={styles.container__input}>
             <label htmlFor="email">Email</label>
             <input {...register("email")} id="email" type="email" />
+            <p className="errors">{errors.email?.message}</p>
           </div>
           <div className={styles.container__input}>
             <div className={styles.container__input__helper}>
@@ -42,11 +47,12 @@ const Register = () => {
               <img src={help} alt="" />
             </div>
             <input
-              {...register("phone")}
+              {...register("telefone")}
               id="phone"
               type="number"
               placeholder="11999999999"
             />
+            <p className="errors">{errors.telefone?.message}</p>
           </div>
           <div className={styles.container__input}>
             <div className={styles.container__input__helper}>
@@ -54,13 +60,15 @@ const Register = () => {
               <img src={help} alt="" />
             </div>
             <input {...register("cep")} id="cep" type="text" />
+            <p className="errors">{errors.cep?.message}</p>
           </div>
           <div className={styles.container__input}>
             <div className={styles.container__input__last}>
               <label htmlFor="pass">Crie sua senha</label>
               <span>(8 dígitos)</span>
             </div>
-            <input {...register("pass")} id="pass" type="password" />
+            <input {...register("senha")} id="pass" type="password" />
+            <p className="errors">{errors.senha?.message}</p>
           </div>
           <CustomButton type="submit" className="default" text="Confirmar" />
         </form>
