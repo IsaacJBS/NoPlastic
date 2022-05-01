@@ -1,0 +1,138 @@
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content img {
+    width: 40vh;
+    height: 20vh;
+    object-fit: cover;
+}
+.content h1 {
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+.news1 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.news1 h1 {
+    margin-top: 30vh;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+.news1 img {
+    margin-top: 3vh;
+    width: 30vh;
+    height: 20vh;
+    object-fit: cover;
+}
+.news1 img :hover {
+    opacity: 20%;
+}
+
+.news2 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.news2 h1 {
+    margin-top: 6vh;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+.news2 img {
+    width: 30vh;
+    height: 20vh;
+    object-fit: cover;
+}
+.news2 img :hover {
+    opacity: 20%;
+}
+.news3 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.news3 h1 {
+    margin-top: 6vh;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+.news3 img {
+    width: 30vh;
+    height: 20vh;
+    object-fit: cover;
+}
+.news3 img :hover {
+    opacity: 20%;
+}
+.news4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.news4 h1 {
+    margin-top: 6vh;
+    font-size: 3vh;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+.news4 img {
+    width: 30vh;
+    height: 20vh;
+    object-fit: cover;
+}
+.news4 img :hover {
+    opacity: 20%;
+}
+.sidebar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar button {
+    height: 10vh;
+    font-size: 2vh;
+    font-weight: bold;
+    margin-top: 2vh;
+    border: none;
+    cursor: pointer;
+    align-items: left;
+    justify-content: left;
+    margin-right: 45vh;
+    background-color: transparent;
+}
+
