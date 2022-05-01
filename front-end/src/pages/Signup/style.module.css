@@ -24,6 +24,8 @@
   font-weight: 700;
   font-size: 2rem;
   line-height: 2.3rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
 }
 
 .container__register__title p {
@@ -60,23 +62,6 @@
   font-size: larger;
 }
 
-.container__input__helper img {
-  margin-left: 0.6rem;
-  width: 1rem;
-}
-
-.container__input__last {
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-
-  margin-bottom: 0.1rem;
-}
-
-.container__input__last span {
-  margin-left: 0.4rem;
-  font-size: 1rem;
-}
 .error {
   color: #fdd450;
   margin-right: 1rem;

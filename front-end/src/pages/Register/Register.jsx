@@ -16,6 +16,7 @@ const Register = () => {
   const validationRegister = { resolver: yupResolver(SchemaRegister) };
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
   const {
     register,
@@ -34,15 +35,14 @@ const Register = () => {
       });
       const responseStatus = requestLogin.status;
       const responseApi = await requestLogin.json();
-      console.log(responseApi);
       if (responseStatus === 203) {
-        ToastifySuccess(responseApi);
+        setMessage("Você será redirecionado");
         setTimeout(() => {
           navigate("/signup");
         }, [2000]);
       }
       if (responseStatus !== 203) {
-        ToastifyError(responseApi);
+        setMessage(responseApi);
       }
       setLoading(false);
     } catch (error) {
@@ -107,6 +107,7 @@ const Register = () => {
           <CustomButton type="submit" className="default" text="Confirmar" />
         </form>
         {loading && <Loader />}
+        {message && <p className={styles.error}>{message}</p>}
       </div>
     </Container>
   );
