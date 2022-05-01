@@ -37,7 +37,7 @@ const Signup = () => {
       const responseApi = await requestLogin.json();
       if (responseStatus === 200) {
         ToastifySuccess(responseApi);
-
+        console.log(responseApi);
         navigate("/home");
       }
       if (responseStatus !== 200) {
