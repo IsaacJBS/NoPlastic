@@ -1,0 +1,23 @@
+.banner {
+  width: 28.4rem;
+  background-color: #0c6777;
+  border-radius: 0.5rem;
+  color: #fff;
+  text-align: center;
+  padding: 1.1rem 1.6rem;
+}
+
+.banner h1 {
+  color: #fff;
+  text-align: left;
+
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+}
+
+.banner p {
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+}

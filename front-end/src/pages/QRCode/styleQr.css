@@ -1,0 +1,56 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 5.5vh;
+  width: 100%;
+  height: 90%;
+  position: fixed;
+}
+.container img {
+  width: 30%;
+  height: 30%;
+  object-fit: contain;
+  justify-content: center;
+  align-items: center;
+  margin-left: 22vh;
+}
+.qrpart {
+    width: 100%;
+    height: 100%;
+    margin-top: 30vh;
+    margin-bottom: 10vh;
+    position: absolute;;
+    overflow: hidden;
+}
+.qrpart_content {
+  display: flex;
+  margin-left: 50vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.qrpart_contenT image {
+  width: 100vh;
+  height: 100vh;
+  padding-left: 300vh;
+  padding-right: 100vh;
+  margin-bottom: 10vh;
+  align-items: center;
+  justify-content: center;
+}
+.back_button {
+    margin-top: 10vh;
+}
+.back_button button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 5vh;
+    position: absolute;
+}
