@@ -7,9 +7,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import SchemaRegister from "../../validations/SchemaRegister";
 import { yupResolver } from "@hookform/resolvers/yup";
-import ToastifyError from "../../helpers/ToastifyError";
 import Loader from "../../helpers/Loader";
-import ToastifySuccess from "../../helpers/ToastifySuccess";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
@@ -46,8 +44,7 @@ const Register = () => {
       }
       setLoading(false);
     } catch (error) {
-      ToastifyError(error.message);
-      setLoading(false);
+      setMessage(false);
     }
   }
 

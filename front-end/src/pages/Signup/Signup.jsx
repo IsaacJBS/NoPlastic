@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import styles from "./style.module.css";
 import Container from "../../components/Container/Container";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import help from "../../assets/help.svg";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import SchemaLogin from "../../validations/SchemaLogin";
 import { yupResolver } from "@hookform/resolvers/yup";
-import ToastifyError from "../../helpers/ToastifyError";
 import Loader from "../../helpers/Loader";
-import ToastifySuccess from "../../helpers/ToastifySuccess";
 import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
@@ -36,8 +33,6 @@ const Signup = () => {
       const responseStatus = requestLogin.status;
       const responseApi = await requestLogin.json();
       if (responseStatus === 200) {
-        ToastifySuccess(responseApi);
-        console.log(responseApi);
         navigate("/home");
       }
       if (responseStatus !== 200) {
@@ -48,8 +43,7 @@ const Signup = () => {
       }
       setLoading(false);
     } catch (error) {
-      ToastifyError(error.message);
-      setLoading(false);
+      setError(error);
     }
   }
 

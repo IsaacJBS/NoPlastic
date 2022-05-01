@@ -23,10 +23,10 @@ const Home = () => {
           <HomeButtons text="Loja" image={bagImg} />
           <HomeButtons text="Mercados Parceiros" image={heartImg} />
           <HomeButtons text="Promoções" image={cardImg} />
-          <Link to="/scanner">
-            <HomeButtons text="Escanear QR Code" type="button__yellow" />
-          </Link>
         </div>
+        <Link to="/scanner">
+          <HomeButtons text="Escanear QR Code" type="button__yellow" />
+        </Link>
         <HomeBanner />
       </div>
       <Footer />
