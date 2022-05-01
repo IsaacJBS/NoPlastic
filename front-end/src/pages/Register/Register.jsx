@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./style.module.css";
 import Container from "../../components/Container/Container";
 import CustomButton from "../../components/CustomButton/CustomButton";
@@ -7,15 +7,49 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import SchemaRegister from "../../validations/SchemaRegister";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ToastifyError from "../../helpers/ToastifyError";
+import Loader from "../../helpers/Loader";
+import ToastifySuccess from "../../helpers/ToastifySuccess";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const validationRegister = { resolver: yupResolver(SchemaRegister) };
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm(validationRegister);
-  const onSubmit = (data) => console.log(data);
+  async function onSubmit(data) {
+    try {
+      setLoading(true);
+      const requestLogin = await fetch("http://15.229.5.37:3000/usuario", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const responseStatus = requestLogin.status;
+      const responseApi = await requestLogin.json();
+      console.log(responseApi);
+      if (responseStatus === 203) {
+        ToastifySuccess(responseApi);
+        setTimeout(() => {
+          navigate("/signup");
+        }, [2000]);
+      }
+      if (responseStatus !== 203) {
+        ToastifyError(responseApi);
+      }
+      setLoading(false);
+    } catch (error) {
+      ToastifyError(error.message);
+      setLoading(false);
+    }
+  }
 
   return (
     <Container>
@@ -72,6 +106,7 @@ const Register = () => {
           </div>
           <CustomButton type="submit" className="default" text="Confirmar" />
         </form>
+        {loading && <Loader />}
       </div>
     </Container>
   );

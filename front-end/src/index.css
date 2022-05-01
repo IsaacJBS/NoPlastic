@@ -19,5 +19,7 @@ a {
 }
 
 .errors {
+  position: absolute;
+  margin-top: 4.7rem;
   color: red;
 }
