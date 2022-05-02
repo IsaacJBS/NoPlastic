@@ -28,7 +28,7 @@ Ajudamos você trocar a sacola de plástico por uma reutilizável produzida com 
 
 ### Como acessar?
 
-Realizando o clone do projeto, ou pode acessar o web app por este [link](https://no-plastic.vercel.app/ https://no-plastic.vercel.app/signup https://no-plastic.vercel.app/home) 👈🏼
+Realizando o clone do projeto, ou pode acessar o web app por este [link](https://no-plastic.vercel.app/) 👈🏼
 
 Obs: caso ocorra algum erro, você também pode acessar pelas rotas que estão aqui embaixo.
 
