@@ -24,13 +24,16 @@ const Register = () => {
   async function onSubmit(data) {
     try {
       setLoading(true);
-      const requestLogin = await fetch("http://15.229.5.37:3000/usuario", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const requestLogin = await fetch(
+        "https://no-plastic-a.herokuapp.com/usuario",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
         },
-        body: JSON.stringify(data),
-      });
+      );
       const responseStatus = requestLogin.status;
       const responseApi = await requestLogin.json();
       if (responseStatus === 203) {
